@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Rating</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+    <div class="container py-4">
+    <h2>Change book rating</h2><br/>
+    <form action="{{ url_for('edit') }}" method="POST">
+        <p>Book Name: {{book.title}}</p>
+        <p>Current Rating: {{book.rating}}</p>
+        <input hidden="hidden" name="id" value="{{book.id}}">
+        <div class="form-group"><input name="rating" type="text" placeholder="New Rating"></div><br/>
+        <button type="submit" class="btn btn-success">Change Rating</button>
+    </form>
+    </div>
+</body>
+</html>
